@@ -1,0 +1,35 @@
+-page 1 
+-text 1 (nechar7ou ce quoi le web development )
+le web development est un doment utuliser pour devlope une page dans un browser qui permert a lutulisateur boucoupe des chose comme: acheter des chose facilmen ou etude et other chose...
+-text 2 (lekari 1  )
+pour developer un site web il faute le etude ( a lenternet ou a lecole )pour ce cone les lange 
+-texte2 (lekari 2 )
+an development il y a boucoupe des lange chac une a sans role est dans cette proge auna triter  trois lange 
+
+
+
+-page 2
+-texte 1 (la lange html )
+la lange de html est la priemre lange il faux le cone car il le Coeur de notre sujet et  
+html est le squelette de site web an generale 
+-exemple sure la lange :
+dans ce exemple j'ai fait and button pour se connecter ou creer un compte 
+
+
+-page 3 
+-texte 1 (la lange de css)
+cette lange est la forme externe du corps sans role est done les detaye et digne de site web 
+cette web est digne par css completment par exemple
+-exemple sure le langage:
+nedire nafes tableau w nedirelou digne be css 
+
+
+
+
+-page 4
+-texte 1 (la lange de java scripte )
+cette lange est la plus utulise car il perme a le web developere ajoute interagir avec l'utilisateur 
+il utulise dans: magasin dans net ou un mini jeux dans le web 
+pour explique commen cette langage marche je ajout un mini jeux de x o
+-exemple sure la lange:
+jeux de X  O
