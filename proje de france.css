@@ -1,7 +1,7 @@
 @media screen and (max-width: 800px) {
   .first {
      height: 700px;
-    width: 100%;
+    width: 800px;
     border: 3px solid black;
     border-radius: 15px;
     background-image: url("photo 1.gif.jpeg");
@@ -68,7 +68,7 @@
 
 .second{
 height: 700px;
-width: 100%;
+width: 800px;
 border: 3px solid black;
 border-radius: 15px;
 background-image: url(sta-je-html.jpg);
@@ -122,7 +122,7 @@ border-radius: 15px;
 
 .css1{
   height: 700px;
-    width: 100%;
+    width: 800px;
     border: 3px solid black;
     border-radius: 15px;
     background-image: url(ChatGPT\ Image\ 18\ oct.\ 2025\,\ 00_27_17.png);
@@ -168,7 +168,7 @@ width: 400px;
 
 .java1{
   height: 700px;
-    width: 100%;
+    width: 800px;
     border: 3px solid black;
     border-radius: 15px;
     background-image: url(choosing-the-best-javascript-frameworks-for-your-next-project.png);
@@ -227,7 +227,7 @@ width: 400px;
 
 .javaex1{
    height: 700px;
-    width: 100%;
+    width: 800px;
     border: 3px solid black;
     border-radius: 15px;
     background-image: url(images.jpg);
@@ -430,4 +430,5 @@ h1 {
 .html, body{
   margin: 0;
   padding: 0;
+
 }
