@@ -1,13 +1,12 @@
+let board = ["", "", "", "", "", "", "", "", ""];
+let currentPlayer = "X";
+let gameOver = false;
 
-let gameBoard = ['', '', '', '', '', '', '', '', ''];
-let currentPlayer = 'X';
-let isGameActive = true;
+const cells = document.querySelectorAll(".cell");
+const statusText = document.getElementById("status");
+const resetBtn = document.getElementById("resetBtn");
 
-
-const cells = document.querySelectorAll('.cell');
-const statusDisplay = document.getElementById('status');
-const resetButton = document.getElementById('reset-button')
-const winningConditions = [
+const winPatterns = [
     [0, 1, 2],
     [3, 4, 5],
     [6, 7, 8],
@@ -18,85 +17,60 @@ const winningConditions = [
     [2, 4, 6]
 ];
 
+cells.forEach(cell => {
+    cell.addEventListener("click", () => {
+        let index = cell.getAttribute("data-index");
 
+        if (board[index] !== "" || gameOver) return;
 
-function handleCellClick(event) {
-    const clickedCell = event.target;
-    const clickedCellIndex = parseInt(clickedCell.getAttribute('data-index'));
+        board[index] = currentPlayer;
+        cell.textContent = currentPlayer;
 
-    
-    if (gameBoard[clickedCellIndex] !== '' || !isGameActive) {
-        return;
-    }
+        checkWinner();
 
-    
-    gameBoard[clickedCellIndex] = currentPlayer;
-    clickedCell.textContent = currentPlayer;
-    clickedCell.classList.add(currentPlayer === 'X' ? 'x-mark' : 'o-mark');
-
-    handleResultValidation();
-}
-
-
-function handleResultValidation() {
-    let roundWon = false;
-
-    
-    for (let i = 0; i < winningConditions.length; i++) {
-        const winCondition = winningConditions[i];
-        let a = gameBoard[winCondition[0]];
-        let b = gameBoard[winCondition[1]];
-        let c = gameBoard[winCondition[2]];
-
-     
-        if (a === '' || b === '' || c === '') {
-            continue;
+        if (!gameOver) {
+            currentPlayer = currentPlayer === "X" ? "O" : "X";
+            statusText.textContent = "Tour du joueur " + currentPlayer;
         }
+    });
+});
 
-        if (a === b && a === c) {
-            roundWon = true;
-            break;
+function checkWinner() {
+    for (let pattern of winPatterns) {
+        let [a, b, c] = pattern;
+
+        if (board[a] && board[a] === board[b] && board[b] === board[c]) {
+            gameOver = true;
+
+            highlight([a, b, c]);
+
+            statusText.textContent = "Le joueur " + board[a] + " a gagné ! 🎉";
+            return;
         }
     }
 
-    if (roundWon) {
-        statusDisplay.textContent = `Player ${currentPlayer} has won! 🎉`;
-        isGameActive = false;
-        return;
+    if (!board.includes("")) {
+        gameOver = true;
+        statusText.textContent = "Match nul ! 🤝";
     }
-
-    let roundDraw = !gameBoard.includes('');
-    if (roundDraw) {
-        statusDisplay.textContent = 'Game ended in a draw! 🤝';
-        isGameActive = false;
-        return;
-    }
-
-   
-    handlePlayerChange();
 }
 
-function handlePlayerChange() {
-    currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
-    statusDisplay.textContent = `Player ${currentPlayer}'s turn`;
-}
-
-
-function handleRestartGame() {
-    gameBoard = ['', '', '', '', '', '', '', '', ''];
-    isGameActive = true;
-    currentPlayer = 'X';
-    statusDisplay.textContent = `Player ${currentPlayer}'s turn`;
-
-    cells.forEach(cell => {
-        cell.textContent = '';
-        cell.classList.remove('x-mark', 'o-mark');
+function highlight(indices) {
+    indices.forEach(i => {
+        cells[i].style.background = "yellow";
+        cells[i].style.color = "black";
     });
 }
 
+resetBtn.addEventListener("click", () => {
+    board = ["", "", "", "", "", "", "", "", ""];
+    currentPlayer = "X";
+    gameOver = false;
+    statusText.textContent = "Tour du joueur X";
 
-cells.forEach(cell => {
-    cell.addEventListener('click', handleCellClick);
+    cells.forEach(c => {
+        c.textContent = "";
+        c.style.background = "#333";
+        c.style.color = "white";
+    });
 });
-
-resetButton.addEventListener('click', handleRestartGame);
