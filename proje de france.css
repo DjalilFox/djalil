@@ -225,89 +225,44 @@ width: 400px;
 /*fin de page 4 */
 
 
-.javaex1{
-   height: 700px;
-    width: 800px;
-    border: 3px solid black;
-    border-radius: 15px;
-    background-image: url(images.jpg);
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-    position: relative; 
-     box-shadow: 0 0 20px ghostwhite;
-    
-}
+    body {
+        background: #222;
+        color: white;
+        text-align: center;
+    }
 
+    #game-board {
+        width: 300px;
+        height: 300px;
+        margin: auto;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        gap: 5px;
+    }
 
+    .cell {
+        background: #333;
+        border-radius: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 40px;
+        cursor: pointer;
+        transition: 0.2s;
+    }
 
-.container {
-    text-align: center;
-    background-color: #fff;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
+    .cell:hover {
+        background:white;
+    }
 
-h1 {
-    color: #333;
-    margin-bottom: 10px;
-}
-
-#status {
-    font-size: 1.2em;
-    margin: 15px 0;
-    font-weight: bold;
-    color: #007bff;
-}
-
-.game-board {
-    display: grid;
-    grid-template-columns: repeat(3, 100px);
-    grid-template-rows: repeat(3, 100px);
-    gap: 5px;
-    margin: 20px auto;
-    border: 3px solid #333;
-    background-color: #333;
-}
-
-.cell {
-    background-color: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 3em;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.2s;
-}
-
-.cell:hover {
-    background-color: #e9ecef;
-}
-
-.cell.x-mark {
-    color: #dc3545; /* Red for X */
-}
-
-.cell.o-mark {
-    color: #28a745; /* Green for O */
-}
-
-#reset-button {
-    padding: 10px 20px;
-    font-size: 1em;
-    cursor: pointer;
-    background-color: #ffc107;
-    color: #333;
-    border: none;
-    border-radius: 5px;
-    margin-top: 15px;
-    transition: background-color 0.2s;
-}
-
-#reset-button:hover {
-    background-color: #e0a800;
-}
+    #resetBtn {
+        margin-top: 20px;
+        padding: 10px 25px;
+        font-size: 18px;
+        border-radius: 10px;
+        cursor: pointer;
+    }
 
 /* fin page de jeu */
 
@@ -432,3 +387,4 @@ h1 {
   padding: 0;
 
 }
+
